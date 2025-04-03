@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução ao SASS</title>
+    <!-- <link rel="stylesheet" href="css/config.min.css" /> -->
+    <link rel="stylesheet" href="css/main.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Introdução ao SASS</h1>
+
+      <section class="secao introducao">
+        <h2>Perguntas básicas</h2>
+
+        <ul>
+          <li>
+            <div class="collapsible">O que é SASS?</div>
+            <div class="conteudo">
+              <p>
+                O
+                <a
+                  href="https://sass-lang.com/guide/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >SASS</a
+                >
+                é um pré-processador CSS. "CSS com superpoderes".
+              </p>
+              <p>
+                Um pré-processador CSS é uma ferramenta que adiciona
+                funcionalidades extras ao CSS tradicional, pra tornar o código
+                mais organizado, reutilizável e fácil de manter.
+              </p>
+              <p>Outros pré-processadores são LESS e Stylus.</p>
+              <p>
+                O código SASS é compilado em CSS padrão antes de ser
+                interpretado pelo navegador.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible">SCSS ou SASS?</div>
+            <div class="conteudo">
+              <p>
+                O SASS tem duas sintaxes. A sintaxe SCSS (.scss) é mais
+                comumente usado, e é um superset do CSS, o que significa que
+                todo CSS é válido em um arquivo SCSS.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+                  </code>
+                </pre>
+              </div>
+
+              <p>
+                Também há a sintaxe SASS (.sass), que usa identação ao invés de
+                chaves para aninhar elementos, e linhas ao invés de ponto e
+                vírgula para separá-los.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+                  </code>
+                </pre>
+              </div>
+
+              <p>Ambos os exemplos resultarão no CSS abaixo:</p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-css">
+                    body {
+                      font: 100% Helvetica, sans-serif;
+                      color: #333;
+                    }
+                  </code>
+                </pre>
+              </div>
+
+              <p>
+                Os exemplos aqui contidos estarão em SCSS, porque é o mais
+                usual.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Como instalar o SASS?</div>
+            <div class="conteudo">
+              <p>
+                Isso vai depender do seu projeto. Nesse site, eu estou usando
+                uma extensão para o Visual Studio Code chamada
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live SASS Compiler</a
+                >, a qual compila o código SASS e transforma-o em CSS padrão,
+                que pode ser importado pelo HTML diretamente.
+              </p>
+              <p>
+                Além disso, existe um pacote NPM que faz a mesma coisa. Por
+                último, ele muitas vezes pode ser instalado e utilizado
+                automaticamente com uma biblioteca JavaScript, como o Angular.
+              </p>
+              <p>
+                Para saber mais, dá uma olhada na
+                <a
+                  href="https://sass-lang.com/install/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  documentação do SASS.
+                </a>
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Como aprender sobre SASS?</div>
+            <div class="conteudo">
+              <p>
+                Dá uma olhada na
+                <a
+                  href="http://https://sass-lang.com/guide/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >documentação oficial</a
+                >, é sempre o melhor lugar para começar.
+              </p>
+              <p>
+                Tem um
+                <a
+                  href="https://cursos.alura.com.br/course/sass-css-estilizando-site"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >curso da Alura sobre SASS</a
+                >.
+              </p>
+              <p>
+                E dá uma olhada nesse
+                <a
+                  href="https://www.youtube.com/watch?v=BaI8dHUthLA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >tutorial gratuito da Rocketseat</a
+                >
+                no youtube.
+              </p>
+              <p>
+                Se preferir conteúdo gringo, tem o
+                <a
+                  href="https://www.youtube.com/watch?v=_a5j7KoflTs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >tutorial do freeCodeCamp</a
+                >
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="secao funcionalidades">
+        <h2>Algumas funcionalidades</h2>
+
+        <ul>
+          <li>
+            <div class="collapsible">Criar variáveis</div>
+            <div class="conteudo">
+              <p>
+                Com o SASS, é possível criar variáveis que podem ser usadas para
+                todo o projeto.
+              </p>
+              <p>
+                Uma característica interessante é que, ao ser compilado, a
+                variável é transformada no seu valor real, melhorando a
+                performance dos sites (que já carregarão com a variável
+                compilada!).
+              </p>
+              <p>
+                Isso difere as variáveis SASS das variáveis CSS, pois o CSS
+                mantém uma referência, que é consultada sempre que o valor será
+                usado. Além disso, as variáveis CSS não são globalmente aceitas
+                pelos navegadores. Isso torna o SASS uma alternativa com melhor
+                compatibilidade nos navegadores.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+$text-color: #1f1f1f;
+$primary: #f16767;
+$quaternary: #fff085;
+$border: border: 4px dashed $quaternary;
+
+.exemplo-1 {
+  background-color: $primary;
+  $border: 4px dashed $quaternary;
+  color: $text-color;
+  border: $border;
+  padding: 0.5em;
+}
+                  </code>
+                </pre>
+              </div>
+              <div class="exemplo exemplo-1">Eu sou o exemplo 🤩</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Aninhamento</div>
+            <div class="conteudo">
+              Permite escrever seletores dentro de outros seletores, seguindo a
+              estrutura hierárquica do HTML. Isso torna o código mais organizado
+              e fácil de ler, evitando repetições desnecessárias.
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                <code class="language-scss">
+.exemplo-2 {
+  background: $primary;
+  border: none;
+  border-radius: $border-radius;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+
+  span {
+    background: white;
+    color: black;
+    padding: 2px;
+  }
+
+  &:hover {
+    background: $secondary;
+    background: $gradient-bg;
+    color: black;
+  }
+}
+                </code>
+              </pre>
+              </div>
+
+              <button class="exemplo exemplo-2">
+                Exemplo 2!
+                <span>Um Span</span>
+              </button>
+
+              <p>
+                O & representa o elemento pai, permitindo modificar estados como
+                :hover, :focus ou adicionar classes dinamicamente. Isso reduz
+                redundâncias e melhora a manutenção do código.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Parciais</div>
+            <div class="conteudo">
+              <p>
+                As parciais em SASS são arquivos que permitem dividir o código
+                CSS em partes menores e reutilizáveis, facilitando a organização
+                e manutenção do projeto.
+              </p>
+              <p>
+                É simplesmente o código SASS isolado em outro arquivo, mas seu
+                nome começa com underline.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+// Arquivo _config.scss:
+
+.conteudo {
+  padding: 0 1.25em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: lighten(#fff085, 20%);
+}
+
+
+// Arquivo main.scss:
+
+@import 'config';
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Módulos</div>
+            <div class="conteudo">
+              <p>
+                Os módulos em SASS permitem organizar o código em arquivos
+                separados e reutilizáveis, facilitando a manutenção. Eles
+                funcionam através do @use, que substitui o antigo @import,
+                trazendo melhorias como escopo restrito e melhor desempenho.
+              </p>
+              <p></p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+// No arquivos cores.scss:
+$text-color: #1f1f1f;
+$primary: #f16767;
+$secondary: #ff9b17;
+$tertiary: #fcb454;
+$quaternary: #fff085;
+
+// Importamos o módulo por meio de @use:
+@use 'cores';
+
+.exemplo-6 {
+  background: cores.$primary;
+  color: white;
+  font-weight: bold;
+}
+
+                  </code>
+                </pre>
+              </div>
+
+              <button class="exemplo exemplo-6">Minha cor vem de um módulo</button>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Mixins</div>
+            <div class="conteudo">
+              <p>
+                Os mixins são blocos de código reutilizáveis que permitem
+                incluir estilos em vários lugares sem repetir código.
+              </p>
+              <p>
+                Eles são especialmente úteis para propriedades com prefixos de
+                navegador ou estilos que precisam ser aplicados em vários
+                elementos.
+              </p>
+              <p>
+                Você pode passar ou não valores para o seu mixin, como uma
+                chamada de função.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+// Criando o mixin:
+
+@mixin botao-estilizado($cor, $tamanho) {
+  background: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+// Aplicando o mixin em um seletor:
+
+.exemplo-3-1 {
+  @include botao-estilizado(red, 15px);
+}
+
+.exemplo-3-2 {
+  @include botao-estilizado(blue, 18px);
+}
+                  </code>
+                </pre>
+              </div>
+
+              <button class="exemplo exemplo-3-1">
+                Botão estilizado com mixin!
+              </button>
+              <button class="exemplo exemplo-3-2">
+                Outro botão estilizado com mixin!
+              </button>
+
+              <p>
+                Os blocos de código criados aqui são reutilizáveis, e podem
+                incluir parâmetros de personalização. Casa uso de um @include
+                gera um novo bloco de CSS, sem agrupar seletores.
+                <b>É ideal para estilos que precisam de variação.</b>
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Herança</div>
+            <div class="conteudo">
+              <p>
+                A herança em SASS permite que um seletor compartilhe estilos de
+                outro usando @extend. Isso evita a repetição de código e mantém
+                o CSS mais enxuto.
+              </p>
+              <p>
+                Para fazer isso, vamos criar uma classe placeholder - ela só é
+                aplicada quando for estendida. Isso torna seu CSS compilado mais
+                enxuto, já que não vai ser compilada se não for usada por outras
+                classe.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+// Classe placeholder (será usada):
+%mensagem-compartilhada {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+// Outra placeholder (não será usada):
+%alturas-iguais {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.exemplo-4-1 {
+  @extend %mensagem-compartilhada;
+}
+
+.exemplo-4-2 {
+  @extend %mensagem-compartilhada;
+  border-color: green;
+}
+                  </code>
+                </pre>
+              </div>
+
+              <div class="exemplo exemplo-4-1">
+                Teste de mensagem compartilhada
+              </div>
+
+              <div class="exemplo exemplo-4-2">
+                Teste de mensagem compartilhada modificada!
+              </div>
+
+              <p>
+                Permite que um seletor herde os estilos de outro, agrupando-os
+                no CSS final. Não permite parâmetros, então, se você não
+                modificar o seletor filho, eles terão o mesmo estilo.
+                <b>
+                  É útil quando os elementos compartilham exatamente o mesmo
+                  estilo.
+                </b>
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">Operadores</div>
+            <div class="conteudo">
+              <p>
+                Permitem a realização de cálculos matemáticos diretamente no
+                CSS, tornando os estilos mais dinâmicos e flexíveis.
+              </p>
+              <p>
+                Podem ser usados para manipular valores de cores, tamanhos,
+                espaçamentos, etc.
+              </p>
+              <p>Aritméticos: +, -, *, math.div(), %.</p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+.exemplo-5-1 {
+  width: 200px + 50px;  // 250px
+  height: 200px / 2;    // 100px
+  margin: 10px * 2;     // 20px
+}
+                    </code>
+                  </pre>
+              </div>
+
+              <div class="exemplo exemplo-5-1">Operadores aritméticos</div>
+
+              <p>De comparação: ==, !=, >, <, >=, <=</p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@if (10px > 5px) {
+  .exemplo-5-2 {
+    border: 2px solid black;
+  }
+}
+                    </code>
+                  </pre>
+              </div>
+
+              <div class="exemplo exemplo-5-2">Operadores de comparação</div>
+
+              <p>
+                De cor: darken(), lighten(), saturate(), desaturate() (para
+                ajustar brilho, saturação, etc.)
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+.exemplo-5-3 {
+  background: darken($primary, 10%); // Torna o rosa um pouco mais escuro
+}
+                    </code>
+                  </pre>
+              </div>
+
+              <div class="exemplo exemplo-5-3">Operadores de cor</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+  <script>
+    hljs.addPlugin(new CopyButtonPlugin());
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script src="index.js"></script>
+</html>
+
+<!-- SCSS: .scss usa chaves, é mais popular e é a que usamos -->
+<!-- Indented: .sass usa identação ao invés de chaves -->

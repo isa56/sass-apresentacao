@@ -1,0 +1,201 @@
+@use 'sass:math';
+@use 'cores';
+
+@import 'config';
+
+//#region VARIABLES
+
+$color-code-background: #23262e;
+$color-code-color: #d5ced9;
+
+$gradient-bg: linear-gradient(
+  90deg,
+  cores.$primary 0%,
+  cores.$tertiary 65%,
+  cores.$quaternary 100%
+);
+$border-radius: 0.6em;
+
+$shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+//#endregion
+
+//#region mixins
+
+@mixin botao-estilizado($cor, $tamanho) {
+  background: $cor;
+  color: white;
+  padding: $tamanho;
+  border-radius: 5px;
+  margin: 0.5em;
+}
+
+//#endregion
+
+//#region placeholders de herança
+
+%mensagem-compartilhada {
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 0.5em;
+}
+
+%alturas-iguais {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//#endregion
+
+//#region CÓDIGO DO SITE
+
+*,
+html {
+  margin: 0;
+}
+
+body {
+  background-color: #fcfaff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23fff085' fill-opacity='0.22' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  color: cores.$text-color;
+  font-family: 'poppins';
+
+  main {
+    margin: 2em;
+
+    h1 {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.secao {
+  background-color: lighten(cores.$tertiary, 40%);
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  padding: 2em;
+  margin-bottom: 1.5em;
+
+  h2 {
+    font-weight: 600;
+    margin-bottom: 0.6em;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+
+      margin-bottom: 1.5em;
+
+      p {
+        margin-bottom: 0.5em;
+      }
+
+      a {
+        color: cores.$secondary;
+
+        &:hover {
+          color: cores.$primary;
+        }
+
+        &:active {
+          color: cores.$tertiary;
+        }
+      }
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: circle;
+    }
+  }
+
+  .exemplo {
+    border: 1px solid cores.$tertiary;
+    padding: 0.5em;
+
+    &.exemplo-1 {
+      background-color: cores.$primary;
+      $border: 4px dashed cores.$quaternary;
+      color: cores.$text-color;
+      border: $border;
+      padding: 0.5em;
+    }
+
+    &.exemplo-2 {
+      background: cores.$primary;
+      border: none;
+      border-radius: $border-radius;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+
+      span {
+        background: white;
+        color: black;
+        padding: 2px;
+      }
+
+      &:hover {
+        background: cores.$secondary;
+        background: $gradient-bg;
+        color: black;
+      }
+    }
+
+    &.exemplo-3-1 {
+      @include botao-estilizado(red, 15px);
+    }
+
+    &.exemplo-3-2 {
+      @include botao-estilizado(blue, 18px);
+    }
+
+    &.exemplo-4-1 {
+      @extend %mensagem-compartilhada;
+    }
+
+    &.exemplo-4-2 {
+      @extend %mensagem-compartilhada;
+      border-color: green;
+    }
+
+    &.exemplo-5-1 {
+      width: 200px + 50px; // 250px
+      height: 200px / 2; // 100px
+      margin: 10px * 2; // 20px
+      margin-bottom: 1em;
+    }
+
+    @if (10px > 5px) {
+      &.exemplo-5-2 {
+        border: 2px solid black;
+        margin-bottom: 1em;
+      }
+    }
+
+    &.exemplo-5-3 {
+      background: darken(
+        cores.$primary,
+        5%
+      ); // Torna o rosa um pouco mais escuro
+      margin-bottom: 1em;
+    }
+
+    &.exemplo-6 {
+      background: cores.$primary;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}
+
+//#endregion

@@ -1,0 +1,269 @@
+@charset "UTF-8";
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.collapsible {
+  background-color: #f16767;
+  border: none;
+  border-radius: 0.6em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  outline: none;
+  padding: 1.25em;
+  text-align: left;
+}
+.collapsible .active, .collapsible:hover {
+  background-color: #ff9b17;
+}
+.collapsible:after {
+  content: "+";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 0.3em;
+}
+.collapsible .active:after {
+  content: "−";
+}
+
+.conteudo {
+  padding: 0 1.25em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fffdeb;
+}
+
+.secao .exemplo.exemplo-4-2, .secao .exemplo.exemplo-4-1 {
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 0.5em;
+}
+
+*,
+html {
+  margin: 0;
+}
+
+body {
+  background-color: #fcfaff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23fff085' fill-opacity='0.22' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #1f1f1f;
+  font-family: "poppins";
+}
+body main {
+  margin: 2em;
+}
+body main h1 {
+  margin-bottom: 1em;
+}
+
+.secao {
+  background-color: white;
+  border-radius: 0.6em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 2em;
+  margin-bottom: 1.5em;
+}
+.secao h2 {
+  font-weight: 600;
+  margin-bottom: 0.6em;
+}
+.secao ul {
+  margin: 0;
+  padding: 0;
+}
+.secao ul li {
+  list-style-type: none;
+  margin-bottom: 1.5em;
+}
+.secao ul li p {
+  margin-bottom: 0.5em;
+}
+.secao ul li a {
+  color: #ff9b17;
+}
+.secao ul li a:hover {
+  color: #f16767;
+}
+.secao ul li a:active {
+  color: #fcb454;
+}
+.secao ol li {
+  list-style-type: circle;
+}
+.secao .exemplo {
+  border: 1px solid #fcb454;
+  padding: 0.5em;
+}
+.secao .exemplo.exemplo-1 {
+  background-color: #f16767;
+  color: #1f1f1f;
+  border: 4px dashed #fff085;
+  padding: 0.5em;
+}
+.secao .exemplo.exemplo-2 {
+  background: #f16767;
+  border: none;
+  border-radius: 0.6em;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+.secao .exemplo.exemplo-2 span {
+  background: white;
+  color: black;
+  padding: 2px;
+}
+.secao .exemplo.exemplo-2:hover {
+  background: #ff9b17;
+  background: linear-gradient(90deg, #f16767 0%, #fcb454 65%, #fff085 100%);
+  color: black;
+}
+.secao .exemplo.exemplo-3-1 {
+  background: red;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 0.5em;
+}
+.secao .exemplo.exemplo-3-2 {
+  background: blue;
+  color: white;
+  padding: 18px;
+  border-radius: 5px;
+  margin: 0.5em;
+}
+.secao .exemplo.exemplo-4-2 {
+  border-color: green;
+}
+.secao .exemplo.exemplo-5-1 {
+  width: 250px;
+  height: 200px/2;
+  margin: 20px;
+  margin-bottom: 1em;
+}
+.secao .exemplo.exemplo-5-2 {
+  border: 2px solid black;
+  margin-bottom: 1em;
+}
+.secao .exemplo.exemplo-5-3 {
+  background: #ef5050;
+  margin-bottom: 1em;
+}
+.secao .exemplo.exemplo-6 {
+  background: #f16767;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}/*# sourceMappingURL=main.min.css.map */
