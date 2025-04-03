@@ -120,7 +120,7 @@
   padding: 1.25em;
   text-align: left;
 }
-.collapsible .active, .collapsible:hover {
+.collapsible.active, .collapsible:hover {
   background-color: #ff9b17;
 }
 .collapsible:after {
@@ -130,7 +130,7 @@
   float: right;
   margin-left: 0.3em;
 }
-.collapsible .active:after {
+.collapsible.active:after {
   content: "−";
 }
 

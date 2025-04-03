@@ -125,7 +125,7 @@
   padding: 1.25em;
   text-align: left;
 
-  .active,
+  &.active,
   &:hover {
     background-color: #ff9b17;
   }
@@ -138,7 +138,7 @@
     margin-left: 0.3em;
   }
 
-  .active:after {
+  &.active:after {
     content: '\2212';
   }
 }
