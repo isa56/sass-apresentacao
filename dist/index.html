@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introdução ao SASS</title>
-    <!-- <link rel="stylesheet" href="css/config.min.css" /> -->
     <link rel="stylesheet" href="css/main.min.css" />
+
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -354,7 +359,9 @@ $quaternary: #fff085;
                 </pre>
               </div>
 
-              <button class="exemplo exemplo-6">Minha cor vem de um módulo</button>
+              <button class="exemplo exemplo-6">
+                Minha cor vem de um módulo
+              </button>
             </div>
           </li>
 
@@ -540,9 +547,212 @@ $quaternary: #fff085;
               <div class="exemplo exemplo-5-3">Operadores de cor</div>
             </div>
           </li>
+
+          <li>
+            <div class="collapsible">Funções embutidas</div>
+            <div class="conteudo">
+              <p>
+                O SASS possui algumas funções embutidas, que podem ser acessadas
+                ao importar alguns módulos.
+              </p>
+
+              <p><b>Módulo math</b>: funções matemáticas</p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@use "sass:math";
+
+math.round(4.7) → 5 (Arredonda para o inteiro mais próximo)
+
+math.floor(4.9) → 4 (Arredonda para baixo)
+
+math.ceil(4.1) → 5 (Arredonda para cima)
+
+math.abs(-10px) → 10px (Valor absoluto)
+
+math.max(10px, 20px, 5px) → 20px (Maior valor)
+
+math.min(10px, 20px, 5px) → 5px (Menor valor)
+
+math.percentage(0.5) → 50% (Converte decimal em porcentagem)
+                    </code>
+                  </pre>
+              </div>
+
+              <p><b>Módulo color</b>: manipulação de cores</p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@use 'sass:color';
+
+color.mix(red, blue, 50%) → roxo (Mistura duas cores)
+
+color.lighten(#3498db, 20%) → azul mais claro
+
+color.darken(#3498db, 20%) → azul mais escuro
+
+color.saturate(#e74c3c, 30%) → aumenta a saturação do vermelho
+
+color.desaturate(#e74c3c, 30%) → reduz a saturação do vermelho
+
+color.invert(black) → white (Inverte a cor)
+
+color.adjust($color, $red: 20, $blue: -10) → ajusta os canais de cor individualmente
+                    </code>
+                  </pre>
+              </div>
+
+              <p><b>Módulo string</b>: manipulação de strings</p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@use 'sass:string';
+
+$string1: "Hello";
+$string2: "World";
+$joined: string.join($string1, $string2, " "); // "Hello World"
+$upper: string.to-upper("sass");  // "SASS"
+$lower: string.to-lower("SASS");  // "sass"
+                    </code>
+                  </pre>
+              </div>
+
+              <p><b>Módulo list</b>: manipulação de listas</p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                  <code class="language-scss">
+                    @use 'sass:list';
+                    
+                    
+                    $cores: red, blue, green;
+                    
+                    $primeira: list.nth($cores, 1);   // red
+                    $tamanho: list.length($cores);    // 3
+                    $nova-lista: list.append($cores, yellow); // red, blue, green, yellow
+                  </code>
+                </pre>
+              </div>
+
+              <p>
+                <b>Módulo map</b>: manipulação de mapas/dicionários - estrutura
+                chave-valor
+              </p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@use "sass:map";
+
+$cores: (
+  "primaria": blue,
+  "secundaria": red
+);
+
+$cor-principal: map.get($cores, "primaria");  // blue
+$novas-cores: map.merge($cores, ("terciaria": green)); 
+// ("primaria": blue, "secundaria": red, "terciaria": green)
+                    </code>
+                  </pre>
+              </div>
+
+              <p><b>Módulo selector</b>: manipulação de seletores CSS</p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@use "sass:selector";
+
+$base: ".btn";
+$modificado: selector.append($base, "--primary"); // ".btn--primary"
+                    </code>
+                  </pre>
+              </div>
+
+              <p><b>Módulo meta</b>: funções meta/avançadas</p>
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+@use "sass:meta";
+
+$existe: meta.variable-exists(cores); // true/false
+$tipo: meta.type-of(10px); // "number"
+                    </code>
+                  </pre>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="collapsible">
+              Estruturas condicionais e de repetição
+            </div>
+            <div class="conteudo">
+              <p>
+                O SASS possui estruturas condicionais e de repetição, como em
+                linguagens de programação.
+              </p>
+
+              <div class="code-wrapper">
+                <pre class="theme-atom-one-dark">
+                    <code class="language-scss">
+// CONDICIONAIS:
+
+$modo-escuro: true;
+
+.exemplo-7-1 {
+  @if $modo-escuro {
+    background: black;
+    color: white;
+  } @else {
+    background: white;
+    color: black;
+  }
+}
+
+// REPETIÇÃO:
+
+// loop com contador
+@for $i from 1 through 3 {
+  .exemplo-7-2.ex-coluna-#{$i} {
+    width: $i * 100px;
+  }
+}
+
+// loop para listas e mapas
+$cores: (exemplo-7-3-1: blue, exemplo-7-3-2: red, exemplo-7-3-3: green);
+
+@each $nome, $valor in $cores {
+  .#{$nome} {
+    background: $valor;
+  }
+}
+
+// loop condicional
+$i: 1;
+
+@while $i <= 3 {
+  .exemplo-7-4.borda-#{$i} {
+    border-width: $i * 2px;
+  }
+  $i: $i + 1;
+}
+                    </code>
+                  </pre>
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
     </main>
+
+    <footer>
+      Projeto desenvolvido por
+      <a
+        href="https://www.linkedin.com/in/isadorafer/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Isadora Gonçalves</a
+      >
+      para apresentar algumas funcionalidades do SASS.
+    </footer>
   </body>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>

@@ -166,6 +166,20 @@ body main {
 body main h1 {
   margin-bottom: 1em;
 }
+body footer {
+  background-color: #fff39f;
+  padding: 1em;
+  text-align: center;
+}
+body footer a {
+  font-weight: 600;
+}
+body footer a:hover, body footer a:active {
+  color: #ed3838;
+}
+body footer a:visited {
+  color: #ed3838;
+}
 
 .secao {
   background-color: white;
