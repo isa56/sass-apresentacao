@@ -6,10 +6,17 @@
     <title>Introdução ao SASS</title>
     <link rel="stylesheet" href="css/main.min.css" />
 
-    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon-96x96.png"
+      sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/assets/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +36,13 @@
       <h1>Introdução ao SASS</h1>
 
       <div class="repo-link">
-        Link do <a href="https://github.com/isa56/sass-apresentacao/" target="_blank" rel="noopener noreferrer">respositório no GitHub</a>.
+        Link do
+        <a
+          href="https://github.com/isa56/sass-apresentacao/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >respositório no GitHub</a
+        >.
       </div>
 
       <section class="secao introducao">
@@ -392,9 +405,9 @@ $quaternary: #fff085;
 // Criando o mixin:
 
 @mixin botao-estilizado($cor, $tamanho) {
-  background: blue;
+  background: $cor;
   color: white;
-  padding: 10px;
+  padding: $tamanho;
   border-radius: 5px;
 }
 
@@ -508,7 +521,7 @@ $quaternary: #fff085;
                     <code class="language-scss">
 .exemplo-5-1 {
   width: 200px + 50px;  // 250px
-  height: 200px / 2;    // 100px
+  height: math.div(200px, 2);    // 100px
   margin: 10px * 2;     // 20px
 }
                     </code>
@@ -625,14 +638,13 @@ $lower: string.to-lower("SASS");  // "sass"
               <div class="code-wrapper">
                 <pre class="theme-atom-one-dark">
                   <code class="language-scss">
-                    @use 'sass:list';
-                    
-                    
-                    $cores: red, blue, green;
-                    
-                    $primeira: list.nth($cores, 1);   // red
-                    $tamanho: list.length($cores);    // 3
-                    $nova-lista: list.append($cores, yellow); // red, blue, green, yellow
+@use 'sass:list';
+
+$cores: red, blue, green;
+
+$primeira: list.nth($cores, 1);   // red
+$tamanho: list.length($cores);    // 3
+$nova-lista: list.append($cores, yellow); // red, blue, green, yellow
                   </code>
                 </pre>
               </div>
