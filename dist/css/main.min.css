@@ -166,6 +166,9 @@ body main {
 body main h1 {
   margin-bottom: 1em;
 }
+body main .repo-link {
+  margin-bottom: 1em;
+}
 body footer {
   background-color: #fff39f;
   padding: 1em;
